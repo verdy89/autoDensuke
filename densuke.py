@@ -54,7 +54,7 @@ while True: # 休日の分割数を指定
 text = ""
 for i in range(int(delta.days)):
 	date = start_date + datetime.timedelta(i)
-	if youbi(date) == "土" or youbi(date) == "日" or jpholiday.is_holiday(date):
+	if (youbi(date) == "土" or youbi(date) == "日" or jpholiday.is_holiday(date)) and holidayCnt > 1:
 		for j in range(holidayCnt):
 			text += str(date.month) + "/" + str(date.day) + "(" + youbi(date) + ")[" + str(j+1) + "]\n"
 	else:
